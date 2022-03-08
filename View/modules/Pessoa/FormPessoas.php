@@ -25,6 +25,9 @@
             <label for="data_nascimento">Data Nascimento:</label>
             <input type="date" name="data_nascimento" id="data_nascimento">
 
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email">
+
             <label for="telefone">Telefone:</label>
             <input type="text" name="telefone" id="telefone">
 

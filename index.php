@@ -14,6 +14,6 @@ switch($uri_parse){
     break;
         
     case '/pessoa/save':
-     
+        PessoaController::save();
     break;        
 }

@@ -21,6 +21,8 @@ class PessoaController{
 
     public static function save()
     {
+        include 'Model/PessoaModel.php';
+        
         $pessoa = new PessoaModel();
 
         $pessoa->nome = $_POST['nome'];
