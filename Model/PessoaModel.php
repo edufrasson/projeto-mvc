@@ -9,5 +9,9 @@ class PessoaModel{
     public function save()
     {
         include 'DAO/PessoaDAO.php';
+
+        $dao = new PessoaDAO;
+
+        $dao->insert($this);
     }
 }

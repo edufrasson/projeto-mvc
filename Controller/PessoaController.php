@@ -33,6 +33,6 @@ class PessoaController{
         $pessoa->telefone = $_POST['telefone'];
         $pessoa->endereco = $_POST['endereco'];
 
-        var_dump($pessoa);
+        $pessoa->save();
     }
 }
