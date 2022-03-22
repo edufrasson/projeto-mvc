@@ -10,16 +10,16 @@
     </style>
 </head>
 <body>
-    <form action="/pessoa/save" method="post">
+    <form action="/produto/save" method="post">
         <fieldset>
-            <legend>Cadastro d e Produtos</legend>
+            <legend>Cadastro de Produtos</legend>
             <label for="descricao">Descrição: </label>
             <input type="text" name="descricao" id="descricao">
-            
+
             <br>
 
-            <label for="Preço">Preço: </label>
-            <input type="number" name="Preço" id="Preço">
+            <label for="preco">Preço: </label>
+            <input type="number" name="preco" id="preco" step="1" min="0">
 
             <br>
 
