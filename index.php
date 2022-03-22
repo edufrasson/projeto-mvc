@@ -8,6 +8,8 @@ include 'Controller/ProdutoController.php';
 // Escopo -> meio 
 
 switch($uri_parse){
+
+    // Rotas de pessoa
     case '/pessoa':
         PessoaController::index();
     break;
@@ -20,6 +22,8 @@ switch($uri_parse){
         PessoaController::save();
     break; 
     
+
+    // Rotas de Produto
     case '/produto':
         ProdutoController::index();
     break;
