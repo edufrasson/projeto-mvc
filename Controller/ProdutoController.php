@@ -8,6 +8,10 @@ class ProdutoController{
         include 'View/modules/Produto/ListarProduto.php';
     }
     public static function form(){
+        include 'Model/ProdutoModel.php';
+        $model = new ProdutoModel();
+        $model->lista_categorias = $model->getAllCategorias();
+
         include 'View/modules/Produto/FormProduto.php';
     }
     public static function save(){

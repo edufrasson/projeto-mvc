@@ -3,6 +3,11 @@
 class ProdutoModel{
     public $descricao, $preco;
 
+    /*
+    * Variável onde são armazenadas as informações do método 
+    */
+    public $lista_categorias;
+
     public function save(){
         include 'DAO/ProdutoDAO.php';
         
@@ -11,5 +16,15 @@ class ProdutoModel{
 
         // Inserindo o próprio objeto model para a classe DAO
         $dao->insert($this);
+    }
+
+    /**
+     * Função que retorna todos os valores da tabela categoria, que é fk de produto  
+     * */ 
+    public function getAllCategorias(){
+        include 'DAO/CategoriaProdutoDAO.php';
+        $dao = new CategoriaProdutoDAO();
+
+        return $dao->getAllRows();
     }
 }

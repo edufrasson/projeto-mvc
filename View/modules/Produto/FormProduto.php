@@ -23,6 +23,15 @@
 
             <br>
 
+            <?php foreach($model->lista_categorias as $categoria):?>
+                <select name="id_paciente">
+                    <option value="<?= $categoria->id ?>">
+                        <?= $categoria->descricao?>
+                    </option>
+                </select>
+            <?php endforeach?>
+            <br><br>
+            
             <button type="submit">Enviar</button>
         </fieldset>
     </form>

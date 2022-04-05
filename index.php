@@ -4,6 +4,7 @@ $uri_parse = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 include 'Controller/PessoaController.php';
 include 'Controller/ProdutoController.php';
+include 'Controller/CategoriaProdutoController.php';
 // :: -> operador de resolução de escopo
 // Escopo -> meio 
 
@@ -35,4 +36,18 @@ switch($uri_parse){
     case '/produto/save':
         ProdutoController::save();
     break; 
+
+    // Rotas de categoria
+
+    case '/categoria_produto':
+        CategoriaProdutoController::index();
+    break;    
+
+    case '/categoria_produto/form':
+        CategoriaProdutoController::form();
+    break;
+    
+    case '/categoria_produto/save':
+        CategoriaProdutoController::save();
+    break;   
 }
