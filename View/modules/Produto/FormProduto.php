@@ -21,15 +21,15 @@
             <label for="preco">Preço: </label>
             <input type="number" name="preco" id="preco" step="1" min="0">
 
-            <br>
-
-            <?php foreach($model->lista_categorias as $categoria):?>
-                <select name="id_paciente">
+            <br>           
+            <select name="id_categoria">
+                <?php foreach($model->lista_categorias as $categoria):?>
                     <option value="<?= $categoria->id ?>">
                         <?= $categoria->descricao?>
                     </option>
-                </select>
-            <?php endforeach?>
+                <?php endforeach?>
+            </select>
+            
             <br><br>
             
             <button type="submit">Enviar</button>

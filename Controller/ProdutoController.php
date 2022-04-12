@@ -5,6 +5,12 @@ class ProdutoController{
     // Criando as funções das rotas
 
     public static function index(){
+        include 'Model/ProdutoModel.php';
+
+        $model = new ProdutoModel();
+
+        $arr_produtos = $model->getAll();
+
         include 'View/modules/Produto/ListarProduto.php';
     }
     public static function form(){
@@ -22,6 +28,7 @@ class ProdutoController{
 
         // Inserindo os valores na model
         $model->descricao = $_POST['descricao'];
+        $model->id_categoria = $_POST['id_categoria'];
         $model->preco = $_POST['preco'];
 
         // Salvando os valores

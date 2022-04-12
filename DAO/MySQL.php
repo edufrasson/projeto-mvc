@@ -1,12 +1,11 @@
 <?php
 
-class MySQL extends PDO{
-    public $dsn, $user, $pass;
+class MySQL extends PDO{    
+    public $dsn = 'mysql:host=localhost;dbname=db_sistema';
+    public $user = 'root';
+    public $pass = 'Eduardo@mysql';
     public function __construct()
-    {
-        $dsn = 'mysql:host=localhost:3307;dbname=db_sistema';
-        $user = 'root';
-        $pass = 'etecjau';
+    {        
         return parent::__construct($this->dsn, $this->user, $this->pass);
     }
 }

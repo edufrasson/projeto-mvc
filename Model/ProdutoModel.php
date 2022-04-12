@@ -1,7 +1,7 @@
 <?php
 
 class ProdutoModel{
-    public $descricao, $preco;
+    public $id, $descricao, $preco, $id_categoria;
 
     /*
     * Variável onde são armazenadas as informações do método 
