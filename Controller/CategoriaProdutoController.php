@@ -4,6 +4,10 @@ class CategoriaProdutoController{
     public static function index(){
         include 'Model/CategoriaProdutoModel.php';             
 
+        $model = new CategoriaProdutoModel();
+
+        $arr_categorias = $model->getAll();
+
         include 'View/modules/Categoria_Produto/ListarCategoriaProduto.php';
     }
 

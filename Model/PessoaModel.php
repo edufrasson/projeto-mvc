@@ -14,4 +14,11 @@ class PessoaModel{
 
         $dao->insert($this);
     }
+
+    public function getAll(){
+        include 'DAO/PessoaDAO.php';
+        $dao = new PessoaDAO();
+
+        return $dao->getAllRows();
+    }
 }

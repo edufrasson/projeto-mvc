@@ -31,4 +31,13 @@ class PessoaDAO{
 
         $stmt->execute();
     }
+
+    public function getAllRows(){
+        $sql = 'SELECT * FROM pessoa';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
 }

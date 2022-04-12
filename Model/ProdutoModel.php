@@ -18,6 +18,13 @@ class ProdutoModel{
         $dao->insert($this);
     }
 
+    public function getAll(){
+        include 'DAO/ProdutoDAO.php';
+        $dao = new ProdutoDAO();
+
+        return $dao->getAllRows();
+    }
+
     /**
      * Função que retorna todos os valores da tabela categoria, que é fk de produto  
      * */ 
@@ -27,4 +34,5 @@ class ProdutoModel{
 
         return $dao->getAllRows();
     }
+    
 }

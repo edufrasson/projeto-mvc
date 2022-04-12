@@ -25,4 +25,13 @@ class ProdutoDAO{
 
         $stmt->execute();
     }
+
+    public function getAllRows(){
+        $sql = 'SELECT * FROM produto';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
 }

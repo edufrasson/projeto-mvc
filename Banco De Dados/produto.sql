@@ -12,6 +12,6 @@ create table produto(
     descricao varchar(100) not null,
     preco double not null, 
     primary key(id),
-    foreign key(id_categoria) references categoria(id)
+    foreign key(id_categoria) references categoria_produto(id)
 );
 

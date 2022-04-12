@@ -11,6 +11,12 @@
 class PessoaController{
     public static function index()
     {
+        include 'Model/PessoaModel.php';
+
+        $model = new PessoaModel();
+
+        $arr_pessoas = $model->getAll();
+
         include 'View/modules/Pessoa/ListarPessoas.php';
     }
 
