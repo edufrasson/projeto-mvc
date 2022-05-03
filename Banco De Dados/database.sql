@@ -1,4 +1,28 @@
 use db_sistema;
+create table pessoa(
+	id int auto_increment not null,
+    nome varchar(100) not null,
+    cpf char(11) not null,
+    rg varchar(45) not null,
+    data_nascimento date not null,
+    email varchar(100),
+    telefone varchar(11),
+    endereco varchar(100) not null,
+    primary key(id)
+);
+
+create table funcionario(
+	id int auto_increment not null,
+    nome varchar(100) not null,
+    cpf char(11) not null,
+    rg varchar(45) not null,
+    data_nascimento date not null,
+    email varchar(100),
+    telefone varchar(11),
+    endereco varchar(100) not null,
+    primary key(id)
+);
+
  create table categoria_produto(
    id int auto_increment not null,
    descricao varchar(100) not null,
