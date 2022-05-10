@@ -11,6 +11,10 @@ include 'Controller/FuncionarioController.php';
 
 switch($uri_parse){
 
+    case '/home':
+        include 'View/modules/Home/Home.php';
+    break;    
+
     // Rotas de pessoa
     case '/pessoa':
         PessoaController::index();
@@ -63,4 +67,8 @@ switch($uri_parse){
     case '/categoria_produto/save':
         CategoriaProdutoController::save();
     break;   
+
+    default:
+        header("Location: /home");
+    break;
 }

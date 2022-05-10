@@ -11,10 +11,11 @@ class FuncionarioModel{
         include 'DAO/FuncionarioDAO.php';
 
         $dao = new FuncionarioDAO;
-        if($this->id !== null)
+
+        if(empty($this->id))
             $dao->insert($this);
-        else
-            $dao->update($this);    
+        else    
+            $dao->update($this);  
     }
 
     public function getAll(){
@@ -22,5 +23,19 @@ class FuncionarioModel{
         $dao = new FuncionarioDAO();
 
         return $dao->getAllRows();
+    }
+
+    public function getById($id){
+        include 'DAO/FuncionarioDAO.php';
+        $dao = new FuncionarioDAO();
+
+        return $dao->getById($id);
+    }
+
+    public function delete($id){
+        include 'DAO/FuncionarioDAO.php';
+        $dao = new FuncionarioDAO();
+
+        $dao->delete($id);
     }
 }

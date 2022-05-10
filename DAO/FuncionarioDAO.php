@@ -45,10 +45,21 @@ class FuncionarioDAO{
     }
 
     public function update(FuncionarioModel $model){
+        $sql = 'UPDATE funcionario SET nome = ?, cpf = ?, data_nascimento = ? WHERE id = ?';
 
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->cpf);
+        $stmt->bindValue(3, $model->data_nascimento);   
+        $stmt->bindValue(4, $model->id);     
+        $stmt->execute();
     }
 
     public function delete(int $id){
+        $sql = 'DELETE FROM funcionario WHERE id = ?';
 
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
     }
 }

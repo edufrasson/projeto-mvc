@@ -11,8 +11,10 @@ class PessoaModel{
         include 'DAO/PessoaDAO.php';
 
         $dao = new PessoaDAO;
-
-        $dao->insert($this);
+        if(empty($this->id))
+            $dao->insert($this);
+        else    
+            $dao->update($this);
     }
 
     public function getAll(){
@@ -27,5 +29,12 @@ class PessoaModel{
         $dao = new PessoaDAO();
 
         return $dao->getById($id);
+    }   
+
+    public function delete($id){
+        include 'DAO/PessoaDAO.php';
+        $dao = new PessoaDAO();
+
+        $dao->delete($id);
     }
 }

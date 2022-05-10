@@ -15,7 +15,10 @@ class ProdutoModel{
         $dao = new ProdutoDAO;
 
         // Inserindo o próprio objeto model para a classe DAO
-        $dao->insert($this);
+        if(empty($this->id))
+            $dao->insert($this);
+        else    
+            $dao->update($this);
     }
 
     public function getAll(){
@@ -33,6 +36,20 @@ class ProdutoModel{
         $dao = new CategoriaProdutoDAO();
 
         return $dao->getAllRows();
+    }
+
+    public function getById($id){
+        include 'DAO/ProdutoDAO.php';
+        $dao = new ProdutoDAO();
+
+        return $dao->getById($id);
+    }
+
+    public function delete($id){
+        include 'DAO/ProdutoDAO.php';
+        $dao = new ProdutoDAO();
+
+        $dao->delete($id);
     }
     
 }

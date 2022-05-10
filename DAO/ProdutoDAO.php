@@ -54,6 +54,10 @@ class ProdutoDAO{
     }
 
     public function delete(int $id){
-        
+        $sql = 'DELETE FROM produto WHERE id = ?';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
     }
 }
