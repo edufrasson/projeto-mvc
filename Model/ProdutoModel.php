@@ -12,7 +12,7 @@ class ProdutoModel{
         include 'DAO/ProdutoDAO.php';
         
         // Instanciando um objeto da classe ProdutoDAO
-        $dao = new ProdutoDAO;
+        $dao = new ProdutoDAO();
 
         // Inserindo o próprio objeto model para a classe DAO
         if(empty($this->id))

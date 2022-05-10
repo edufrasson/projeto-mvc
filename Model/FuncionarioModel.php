@@ -10,7 +10,7 @@ class FuncionarioModel{
     {
         include 'DAO/FuncionarioDAO.php';
 
-        $dao = new FuncionarioDAO;
+        $dao = new FuncionarioDAO();
 
         if(empty($this->id))
             $dao->insert($this);

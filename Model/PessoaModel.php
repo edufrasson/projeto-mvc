@@ -10,7 +10,7 @@ class PessoaModel{
     {
         include 'DAO/PessoaDAO.php';
 
-        $dao = new PessoaDAO;
+        $dao = new PessoaDAO();
         if(empty($this->id))
             $dao->insert($this);
         else    

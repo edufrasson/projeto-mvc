@@ -15,7 +15,8 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">CPF</th>
-                    <th scope="col">Data de Nascimento</th>                    
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">Ações</th>                    
                 </tr>
             </thead>
             <tbody>
