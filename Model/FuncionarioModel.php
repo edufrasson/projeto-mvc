@@ -3,16 +3,18 @@
 class FuncionarioModel{
 
     // Atributos (campos do banco de dados)
-    public $id, $nome, $rg, $cpf, $telefone;
-    public $data_nascimento, $email, $endereco;
+    public $id, $nome, $cpf;
+    public $data_nascimento;
 
     public function save()
     {
         include 'DAO/FuncionarioDAO.php';
 
         $dao = new FuncionarioDAO;
-
-        $dao->insert($this);
+        if($this->id !== null)
+            $dao->insert($this);
+        else
+            $dao->update($this);    
     }
 
     public function getAll(){

@@ -16,23 +16,11 @@
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
 
-            <label for="rg">RG:</label>
-            <input type="text" name="rg" id="rg">
-
             <label for="cpf">CPF:</label>
             <input type="number" name="cpf" id="cpf">
 
             <label for="data_nascimento">Data Nascimento:</label>
             <input type="date" name="data_nascimento" id="data_nascimento">
-
-            <label for="email">E-mail:</label>
-            <input type="text" name="email" id="email">
-
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone">
-
-            <label for="endereco">Endereço:</label>
-            <input type="text" name="endereco" id="endereco">
 
             <br>
 

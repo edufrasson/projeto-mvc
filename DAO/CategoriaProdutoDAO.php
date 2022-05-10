@@ -25,4 +25,16 @@ class CategoriaProdutoDAO{
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
+
+    public function getById($id){
+        
+    }
+
+    public function update(CategoriaProdutoModel $model){
+
+    }
+
+    public function delete(int $id){
+        
+    }
 }

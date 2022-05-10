@@ -15,26 +15,18 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">RG</th>
                     <th scope="col">CPF</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Endereço</th>
+                    <th scope="col">Data de Nascimento</th>                    
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($arr_pessoas as $pessoa):?>
-                <tr>
-                    <th scope="row"><?= $pessoa->id ?></th>
-                    <td><?= $pessoa->nome ?></td>
-                    <td><?= $pessoa->data_nascimento ?></td>
-                    <td><?= $pessoa->rg ?></td>
-                    <td><?= $pessoa->cpf ?></td>
-                    <td><?= $pessoa->email ?></td>
-                    <td><?= $pessoa->telefone ?></td>
-                    <td><?= $pessoa->endereco ?></td>
-                </tr>
+                    <tr>
+                        <th scope="row"><?= $pessoa->id ?></th>
+                        <td><?= $pessoa->nome ?></td>
+                        <td><?= $pessoa->cpf ?></td>
+                        <td><?= $pessoa->data_nascimento ?></td>                   
+                    </tr>
                 <?php endforeach?>
             </tbody>
         </table>

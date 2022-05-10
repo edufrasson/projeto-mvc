@@ -31,14 +31,10 @@ class FuncionarioController{
         
         $funcionario = new FuncionarioModel();
 
-        $funcionario->nome = $_POST['nome'];
-        $funcionario->rg = $_POST['rg'];
+        $funcionario->nome = $_POST['nome'];        
         $funcionario->cpf = $_POST['cpf'];
         $funcionario->data_nascimento = $_POST['data_nascimento'];
-        $funcionario->email = $_POST['email'];
-        $funcionario->telefone = $_POST['telefone'];
-        $funcionario->endereco = $_POST['endereco'];
-
+        
         $funcionario->save();
     }
 }

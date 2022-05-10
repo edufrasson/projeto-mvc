@@ -3,8 +3,8 @@
 class PessoaModel{
 
     // Atributos (campos do banco de dados)
-    public $id, $nome, $rg, $cpf, $telefone;
-    public $data_nascimento, $email, $endereco;
+    public $id, $nome, $cpf;
+    public $data_nascimento;
 
     public function save()
     {
@@ -20,5 +20,12 @@ class PessoaModel{
         $dao = new PessoaDAO();
 
         return $dao->getAllRows();
+    }
+
+    public function getById($id){
+        include 'DAO/PessoaDAO.php';
+        $dao = new PessoaDAO();
+
+        return $dao->getById($id);
     }
 }

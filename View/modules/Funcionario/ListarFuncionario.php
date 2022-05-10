@@ -14,13 +14,8 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">RG</th>
                     <th scope="col">CPF</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Endereço</th>
+                    <th scope="col">Data de Nascimento</th>                    
                 </tr>
             </thead>
             <tbody>
@@ -28,12 +23,8 @@
                 <tr>
                     <th scope="row"><?= $funcionario->id ?></th>
                     <td><?= $funcionario->nome ?></td>
-                    <td><?= $funcionario->data_nascimento ?></td>
-                    <td><?= $funcionario->rg ?></td>
                     <td><?= $funcionario->cpf ?></td>
-                    <td><?= $funcionario->email ?></td>
-                    <td><?= $funcionario->telefone ?></td>
-                    <td><?= $funcionario->endereco ?></td>
+                    <td><?= $funcionario->data_nascimento ?></td>
                 </tr>
                 <?php endforeach?>
             </tbody>

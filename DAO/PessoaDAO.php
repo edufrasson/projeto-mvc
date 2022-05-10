@@ -12,19 +12,15 @@ class PessoaDAO{
     
     public function insert(PessoaModel $model){
         $sql = 'INSERT INTO pessoa
-                (nome, rg, cpf, email, data_nascimento, telefone, endereco)
+                (nome, cpf, data_nascimento)
                 VALUES 
-                (?, ?, ?, ?, ?, ?, ?)  ';
+                (?, ?, ?)  ';
 
         $stmt = $this->conexao->prepare($sql);
         
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->rg);
-        $stmt->bindValue(3, $model->cpf);
-        $stmt->bindValue(4, $model->email);
-        $stmt->bindValue(5, $model->data_nascimento);
-        $stmt->bindValue(6, $model->telefone);
-        $stmt->bindValue(7, $model->endereco);
+        $stmt->bindValue(2, $model->cpf);     
+        $stmt->bindValue(3, $model->data_nascimento);       
 
         $stmt->execute();
     }
@@ -36,5 +32,34 @@ class PessoaDAO{
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function getById($id){
+        $sql = 'SELECT * FROM pessoa WHERE id = ?';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("PessoaModel");
+    }
+
+    public function update(PessoaModel $model){
+        $sql = 'UPDATE pessoa SET nome = ?, cpf = ?, data_nascimento = ? WHERE id = ?';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->cpf);
+        $stmt->bindValue(3, $model->data_nascimento);   
+        $stmt->bindValue(4, $model->id);     
+        $stmt->execute();
+    }
+
+    public function delete($id){
+        $sql = 'DELETE FROM pessoa WHERE id = ?';
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
     }
 }
