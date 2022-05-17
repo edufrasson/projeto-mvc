@@ -28,6 +28,10 @@ switch($uri_parse){
         PessoaController::save();
     break; 
 
+    case '/pessoa/delete':
+        PessoaController::delete();
+    break;
+
     // Rotas de funcionario
     case '/funcionario':
         FuncionarioController::index();

@@ -37,4 +37,13 @@ class PessoaController{
        
         $pessoa->save();
     }
+
+    public static function delete(){
+        include 'Model/PessoaModel.php';
+        $pessoa = new PessoaModel();
+        if(isset($_GET['id']))
+            $pessoa->delete($_GET['id']);
+
+        header('Location: /home');  
+    }
 }

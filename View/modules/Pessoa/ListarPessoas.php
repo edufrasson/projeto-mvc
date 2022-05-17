@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <header>
+        <?php include 'View/includes/cabecalho.php' ?>
+    </header>
     <div class="container">
         <table class="table">
             <thead>
