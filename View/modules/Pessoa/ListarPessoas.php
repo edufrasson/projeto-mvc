@@ -33,11 +33,11 @@
                         <td><?= $pessoa->cpf ?></td>
                         <td><?= $pessoa->data_nascimento ?></td>
                         <td class="actions">
-                            <a href="/ver?id=<?= $pessoa->id ?>">
+                            <a href="/pessoa/ver?id=<?= $pessoa->id ?>">
                                 <i class='bx bx-edit '></i>
                             </a>
 
-                            <a href="/deletar?id=<?= $pessoa->id ?>">
+                            <a href="/pessoa/deletar?id=<?= $pessoa->id ?>">
                                 <i class='bx bx-trash text-danger'></i>
                             </a>
                         </td>

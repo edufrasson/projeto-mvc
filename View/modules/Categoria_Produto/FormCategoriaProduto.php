@@ -18,6 +18,7 @@
     </header>
     <div class="container">
         <form class="form" action="/categoria_produto/save" method="post">
+            <legend>Cadastro de Categoria de Produtos</legend>
             <div class="form-group mb-3">
                 <label for="descricao">Descrição</label>
                 <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Digitar Descrição">

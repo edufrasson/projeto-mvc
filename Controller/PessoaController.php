@@ -25,6 +25,15 @@ class PessoaController{
         include 'View/modules/Pessoa/FormPessoas.php';
     }
 
+    public static function ver(){
+        include 'Model/PessoaModel.php';
+        $model = new PessoaModel();
+        
+        $dados_pessoa = $model->getById($_GET['id']);
+        
+        include 'View/modules/Pessoa/FormPessoas.php';    
+    }
+
     public static function save()
     {
         include 'Model/PessoaModel.php';
@@ -44,6 +53,6 @@ class PessoaController{
         if(isset($_GET['id']))
             $pessoa->delete($_GET['id']);
 
-        header('Location: /home');  
+        header('Location: /pessoa');  
     }
 }

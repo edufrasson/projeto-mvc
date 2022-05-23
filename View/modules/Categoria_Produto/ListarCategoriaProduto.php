@@ -28,15 +28,19 @@
                     <tr>
                         <th scope="row"><?= $categoria->id ?></th>
                         <td><?= $categoria->descricao ?></td>
-                        <td class="actions">
-                            <a href="/ver?id=<?= $categoria->id ?>">
-                                <span class='bx bxs-message-square-edit '></span>
-                            </a>
-
-                            <a href="/deletar?id=<?= $categoria->id ?>">
-                                <i class='bx bx-trash text-danger'></i>
-                            </a>
+                        <td class="update d-flex row">
+                            <div class="update col-2">
+                                <a href="/ver?id=<?= $categoria->id ?>">
+                                    <i class='bx bx-edit'></i>
+                                </a>
+                            </div>
+                            <div class="delete col-9">
+                                <a href="/deletar?id=<?= $categoria->id ?>">
+                                    <i class='bx bx-trash text-danger'></i>
+                                </a>
+                            </div>                          
                         </td>
+
                     </tr>
                 <?php endforeach ?>
             </tbody>

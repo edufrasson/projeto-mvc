@@ -28,8 +28,12 @@ switch($uri_parse){
         PessoaController::save();
     break; 
 
-    case '/pessoa/delete':
+    case '/pessoa/deletar':
         PessoaController::delete();
+    break;
+
+    case '/pessoa/ver':
+        PessoaController::ver();
     break;
 
     // Rotas de funcionario
@@ -72,7 +76,7 @@ switch($uri_parse){
         CategoriaProdutoController::save();
     break;   
 
-    default:
+    /*default:
         header("Location: /home");
-    break;
+    break;*/
 }
