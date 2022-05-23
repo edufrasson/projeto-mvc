@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mr-2">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mr-2 ">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav justify-content-between">          
-            <li class="nav-item dropdown">
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+        <ul class="navbar-nav justify-content-between row">          
+            <li class="nav-item dropdown col">
                 <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Pessoa
                 </a>
@@ -15,7 +15,7 @@
                 </ul>
             </li>      
              
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown col">
                 <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Produto
                 </a>
@@ -25,7 +25,7 @@
                 </ul>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown col">
                 <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Categoria de Produto
                 </a>
@@ -35,7 +35,7 @@
                 </ul>
             </li>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown col">
                 <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Funcionário
                 </a>
