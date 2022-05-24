@@ -23,20 +23,19 @@
         <form class="form" action="/pessoa/save" method="post">
             <fieldset class="form-group">
                 <legend>Cadastro de Pessoas</legend>
+
+
+                <input type="hidden" value="<?= $model->id ?>" name="id">
+
+
                 <label for="nome">Nome:</label>
-                <input class="form-control mb-3" type="text" name="nome" id="nome"
-                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->nome : '' ?>"
-                >
+                <input class="form-control mb-3" type="text" name="nome" id="nome" value="<?= $model->nome ?>">
 
                 <label for="cpf">CPF:</label>
-                <input class="form-control mb-3" type="number" name="cpf" id="cpf"
-                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->cpf : '' ?>"
-                >
+                <input class="form-control mb-3" type="number" name="cpf" id="cpf" value="<?= $model->cpf ?>">
 
                 <label for="data_nascimento">Data Nascimento:</label>
-                <input class="form-control mb-3" type="date" name="data_nascimento" id="data_nascimento"
-                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->data_nascimento : '' ?>"
-                >
+                <input class="form-control mb-3" type="date" name="data_nascimento" id="data_nascimento" value="<?= $model->data_nascimento ?>">
 
                 <br>
 

@@ -20,7 +20,9 @@ class CategoriaProdutoController{
 
         $model = new CategoriaProdutoModel();
 
+        $model->id = $_POST['id'];
         $model->descricao = $_POST['descricao'];
+        
         $model->save();
 
         header("Location: /categoria_produto");
@@ -39,7 +41,7 @@ class CategoriaProdutoController{
         include 'Model/CategoriaProdutoModel.php';
         $model = new CategoriaProdutoModel();
         
-        $dados_categoria_produto = $model->getById($_GET['id']);
+        $model = $model->getById($_GET['id']);
         
         include 'View/modules/Categoria_Produto/FormCategoriaProduto.php';    
     }

@@ -21,8 +21,11 @@
             <legend>Cadastro de Categoria de Produtos</legend>
             <div class="form-group mb-3">
                 <label for="descricao">Descrição</label>
+
+                <input type="hidden" value="<?= $model->id?>" name="id">
+
                 <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Digitar Descrição"
-                value="<?= (isset($dados_categoria_produto)) ? $dados_categoria_produto->descricao : '' ?>"
+                value="<?= $model->descricao?>"
                 >
             </div>        
             <button type="submit" class="btn btn-primary">Salvar</button>

@@ -23,6 +23,11 @@
         <form class="form" action="/produto/save" method="post">
             <fieldset class="form-group">
                 <legend>Cadastro de Produtos</legend>
+
+                <?php if(isset($dados_produto)):?>
+                    <input type="hidden" value="<?=$dados_produto->id?>" name="id">
+                <?php endif?>
+                
                 <label for="descricao">Descrição: </label>
                 <input class="form-control mb-3" type="text" name="descricao" id="descricao" value="<?= (isset($dados_produto)) ? $dados_produto->descricao : '' ?>">
 
@@ -32,11 +37,13 @@
                 <input class="form-control mb-3" type="number" name="preco" id="preco" step="1" min="0" value="<?= (isset($dados_produto)) ? $dados_produto->preco : '' ?>">
 
                 <br>
-                <select class="select" name="id_categoria">
-                    <option value="">Selecione...</option>
-
+                <select class="select" name="id_categoria">                  
                     <?php foreach ($categorias_arr as $categoria) : ?>
-                        <option value="<?= $categoria->id ?>" <?= ($categoria->id == $dados_produto->id_categoria) ? "selected" : "" ?>>
+                        <option value="<?= $categoria->id ?>"
+                            <?php if(isset($dados_produto)):?>
+                                <?= ($categoria->id == $dados_produto->id_categoria) ? "selected" : "" ?>
+                            <?php endif?>
+                        >
                             <?= $categoria->descricao ?>
                         </option>
                     <?php endforeach ?>

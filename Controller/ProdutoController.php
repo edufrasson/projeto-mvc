@@ -27,6 +27,7 @@ class ProdutoController{
         $model = new ProdutoModel();
 
         // Inserindo os valores na model
+        $model->id = $_POST['id'];
         $model->descricao = $_POST['descricao'];
         $model->id_categoria = $_POST['id_categoria'];
         $model->preco = $_POST['preco'];

@@ -22,6 +22,9 @@ class FuncionarioController{
 
     public static function form()
     {
+        include 'Model/FuncionarioModel.php';
+        $model = new FuncionarioModel();
+
         include 'View/modules/Funcionario/FormFuncionario.php';
     }
 
@@ -31,6 +34,7 @@ class FuncionarioController{
         
         $funcionario = new FuncionarioModel();
 
+        $funcionario->id = $_POST['id'];
         $funcionario->nome = $_POST['nome'];        
         $funcionario->cpf = $_POST['cpf'];
         $funcionario->data_nascimento = $_POST['data_nascimento'];
@@ -46,14 +50,14 @@ class FuncionarioController{
         if(isset($_GET['id']))
             $funcionario->delete($_GET['id']);
 
-        header('Location: /Funcionario');  
+        header('Location: /funcionario');  
     }
 
     public static function ver(){
         include 'Model/FuncionarioModel.php';
         $model = new FuncionarioModel();
         
-        $dados_funcionario = $model->getById($_GET['id']);
+        $model = $model->getById($_GET['id']);
         
         include 'View/modules/Funcionario/FormFuncionario.php';    
     }

@@ -11,7 +11,7 @@
 <body>
     <header>
         <?php include 'View/includes/cabecalho.php'?>
-    </header>
+    </header>    
 
     <?php include 'View/includes/js_config.php'?>
     

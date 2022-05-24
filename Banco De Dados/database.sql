@@ -1,3 +1,5 @@
+drop database db_sistema;
+
 create database db_sistema;
 use db_sistema;
 create table pessoa(
@@ -41,4 +43,5 @@ SELECT p.id as id,
        cp.descricao as categoria
 FROM produto p 
 JOIN categoria_produto cp on cp.id = p.id_categoria
+ORDER BY p.id;
 

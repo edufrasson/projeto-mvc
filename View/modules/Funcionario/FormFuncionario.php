@@ -18,21 +18,24 @@
             <fieldset class="form-group">
                 <legend>Cadastro de Funcionarios</legend>
                 <br>
+
+                <input type="hidden" value="<?= $model->id ?>" name="id">
+
                 <label for="nome">Nome:</label>
                 <input class="form-control mb-3" type="text" name="nome" id="nome"
-                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->nome : '' ?>"
+                value="<?= $model->nome ?>"
                 >
 
                 <br>
                 <label for="cpf">CPF:</label>
                 <input class="form-control mb-3" type="number" name="cpf" id="cpf"
-                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->cpf : '' ?>"
+                value="<?= $model->cpf ?>"
                 >
 
                 <br>
                 <label for="data_nascimento">Data Nascimento:</label>
                 <input class="form-control mb-3" type="date" name="data_nascimento" id="data_nascimento"
-                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->data_nascimento : '' ?>"
+                value="<?= $model->data_nascimento ?>"
                 >
 
                 <br>

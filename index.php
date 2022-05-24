@@ -101,8 +101,7 @@ switch($uri_parse){
         CategoriaProdutoController::ver();
     break; 
 
-/*
-    default:
+     default:
         header("Location: /home");
-    break;*/
+    break;
 }

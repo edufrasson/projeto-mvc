@@ -22,6 +22,9 @@ class PessoaController{
 
     public static function form()
     {
+        include 'Model/PessoaModel.php';
+        $model = new PessoaModel();
+
         include 'View/modules/Pessoa/FormPessoas.php';
     }
 
@@ -29,7 +32,7 @@ class PessoaController{
         include 'Model/PessoaModel.php';
         $model = new PessoaModel();
         
-        $dados_pessoa = $model->getById($_GET['id']);
+        $model = $model->getById($_GET['id']);
         
         include 'View/modules/Pessoa/FormPessoas.php';    
     }
@@ -38,12 +41,13 @@ class PessoaController{
     {
         include 'Model/PessoaModel.php';
         
-        $pessoa = new PessoaModel();
+        $pessoa = new PessoaModel();       
 
+        $pessoa->id = $_POST['id'];
         $pessoa->nome = $_POST['nome'];       
         $pessoa->cpf = $_POST['cpf'];
-        $pessoa->data_nascimento = $_POST['data_nascimento'];
-       
+        $pessoa->data_nascimento = $_POST['data_nascimento'];   
+ 
         $pessoa->save();
 
         header('Location: /pessoa');
