@@ -45,6 +45,8 @@ class PessoaController{
         $pessoa->data_nascimento = $_POST['data_nascimento'];
        
         $pessoa->save();
+
+        header('Location: /pessoa');
     }
 
     public static function delete(){

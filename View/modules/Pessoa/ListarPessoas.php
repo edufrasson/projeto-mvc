@@ -32,14 +32,17 @@
                         <td><?= $pessoa->nome ?></td>
                         <td><?= $pessoa->cpf ?></td>
                         <td><?= $pessoa->data_nascimento ?></td>
-                        <td class="actions">
-                            <a href="/pessoa/ver?id=<?= $pessoa->id ?>">
-                                <i class='bx bx-edit '></i>
-                            </a>
-
-                            <a href="/pessoa/deletar?id=<?= $pessoa->id ?>">
-                                <i class='bx bx-trash text-danger'></i>
-                            </a>
+                        <td class="update d-flex row">
+                            <div class="update col-2">
+                                <a href="/pessoa/ver?id=<?= $pessoa->id ?>">
+                                    <i class='bx bx-edit'></i>
+                                </a>
+                            </div>
+                            <div class="delete col-9">
+                                <a href="/pessoa/deletar?id=<?= $pessoa->id ?>">
+                                    <i class='bx bx-trash text-danger'></i>
+                                </a>
+                            </div>                          
                         </td>
                     </tr>
                 <?php endforeach ?>

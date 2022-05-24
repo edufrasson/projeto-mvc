@@ -19,31 +19,36 @@
     <header>
         <?php include 'View/includes/cabecalho.php' ?>
     </header>
-    <form action="/produto/save" method="post">
-        <fieldset>
-            <legend>Cadastro de Produtos</legend>
-            <label for="descricao">Descrição: </label>
-            <input type="text" name="descricao" id="descricao">
+    <div class="container">
+        <form class="form" action="/produto/save" method="post">
+            <fieldset class="form-group">
+                <legend>Cadastro de Produtos</legend>
+                <label for="descricao">Descrição: </label>
+                <input class="form-control mb-3" type="text" name="descricao" id="descricao" value="<?= (isset($dados_produto)) ? $dados_produto->descricao : '' ?>">
 
-            <br>
+                <br>
 
-            <label for="preco">Preço: </label>
-            <input type="number" name="preco" id="preco" step="1" min="0">
+                <label for="preco">Preço: </label>
+                <input class="form-control mb-3" type="number" name="preco" id="preco" step="1" min="0" value="<?= (isset($dados_produto)) ? $dados_produto->preco : '' ?>">
 
-            <br>
-            <select name="id_categoria">
-                <?php foreach ($model->lista_categorias as $categoria) : ?>
-                    <option value="<?= $categoria->id ?>">
-                        <?= $categoria->descricao ?>
-                    </option>
-                <?php endforeach ?>
-            </select>
+                <br>
+                <select class="select" name="id_categoria">
+                    <option value="">Selecione...</option>
 
-            <br><br>
+                    <?php foreach ($categorias_arr as $categoria) : ?>
+                        <option value="<?= $categoria->id ?>" <?= ($categoria->id == $dados_produto->id_categoria) ? "selected" : "" ?>>
+                            <?= $categoria->descricao ?>
+                        </option>
+                    <?php endforeach ?>
+                </select>
 
-            <button type="submit">Enviar</button>
-        </fieldset>
-    </form>
+                <br><br>
+
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+
     <?php include 'View/includes/js_config.php' ?>
 </body>
 

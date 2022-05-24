@@ -13,26 +13,35 @@
     <header>
         <?php include 'View/includes/cabecalho.php' ?>
     </header>
-    <form class="form"action="/funcionario/save" method="post">
-        <fieldset>
-            <legend>Cadastro de Funcionarios</legend>
-            <br>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
+    <div class="container">
+        <form class="form" action="/funcionario/save" method="post">
+            <fieldset class="form-group">
+                <legend>Cadastro de Funcionarios</legend>
+                <br>
+                <label for="nome">Nome:</label>
+                <input class="form-control mb-3" type="text" name="nome" id="nome"
+                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->nome : '' ?>"
+                >
 
-            <br>
-            <label for="cpf">CPF:</label>
-            <input type="number" name="cpf" id="cpf">
+                <br>
+                <label for="cpf">CPF:</label>
+                <input class="form-control mb-3" type="number" name="cpf" id="cpf"
+                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->cpf : '' ?>"
+                >
 
-            <br>
-            <label for="data_nascimento">Data Nascimento:</label>
-            <input type="date" name="data_nascimento" id="data_nascimento">
+                <br>
+                <label for="data_nascimento">Data Nascimento:</label>
+                <input class="form-control mb-3" type="date" name="data_nascimento" id="data_nascimento"
+                value="<?= (isset($dados_funcionario)) ? $dados_funcionario->data_nascimento : '' ?>"
+                >
 
-            <br>
+                <br>
 
-            <button type="submit">Enviar</button>
-        </fieldset>
-    </form>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
+
     <?php include './View/includes/js_config.php' ?>
 </body>
 

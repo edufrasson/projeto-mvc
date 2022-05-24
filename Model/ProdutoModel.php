@@ -1,7 +1,7 @@
 <?php
 
 class ProdutoModel{
-    public $id, $descricao, $preco, $id_categoria;
+    public $id, $descricao, $preco, $id_categoria, $categoria;
 
     /*
     * Variável onde são armazenadas as informações do método 
@@ -9,7 +9,7 @@ class ProdutoModel{
     public $lista_categorias;
 
     public function save(){
-        include 'DAO/ProdutoDAO.php';
+        include_once 'DAO/ProdutoDAO.php';
         
         // Instanciando um objeto da classe ProdutoDAO
         $dao = new ProdutoDAO();
@@ -22,7 +22,7 @@ class ProdutoModel{
     }
 
     public function getAll(){
-        include 'DAO/ProdutoDAO.php';
+        include_once 'DAO/ProdutoDAO.php';
         $dao = new ProdutoDAO();
 
         return $dao->getAllRows();
@@ -32,14 +32,14 @@ class ProdutoModel{
      * Função que retorna todos os valores da tabela categoria, que é fk de produto  
      * */ 
     public function getAllCategorias(){
-        include 'DAO/CategoriaProdutoDAO.php';
+        include_once 'DAO/CategoriaProdutoDAO.php';
         $dao = new CategoriaProdutoDAO();
 
         return $dao->getAllRows();
     }
 
     public function getById($id){
-        include 'DAO/ProdutoDAO.php';
+        include_once 'DAO/ProdutoDAO.php';
         $dao = new ProdutoDAO();
 
         return $dao->getById($id);

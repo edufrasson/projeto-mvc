@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mr-2 ">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mr-2 mb-3">
+    <a class="navbar-brand" href="#">Projeto MVC</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

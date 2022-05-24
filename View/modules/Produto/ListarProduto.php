@@ -34,14 +34,17 @@
                         <td><?= $produto->descricao ?></td>
                         <td><?= $produto->categoria ?></td>
                         <td><?= $produto->preco ?></td>
-                        <td class="actions">
-                            <a href="/ver?id=<?= $produto->id ?>">
-                                <i class='bx bx-edit '></i>
-                            </a>
-
-                            <a href="/deletar?id=<?= $produto->id ?>">
-                                <i class='bx bx-trash text-danger'></i>
-                            </a>
+                        <td class="update d-flex row">
+                            <div class="update col-2">
+                                <a href="/produto/ver?id=<?= $produto->id ?>">
+                                    <i class='bx bx-edit'></i>
+                                </a>
+                            </div>
+                            <div class="delete col-9">
+                                <a href="/produto/deletar?id=<?= $produto->id ?>">
+                                    <i class='bx bx-trash text-danger'></i>
+                                </a>
+                            </div>                          
                         </td>
                     </tr>
                 <?php endforeach ?>

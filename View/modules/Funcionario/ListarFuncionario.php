@@ -31,6 +31,18 @@
                         <td><?= $funcionario->nome ?></td>
                         <td><?= $funcionario->cpf ?></td>
                         <td><?= $funcionario->data_nascimento ?></td>
+                        <td class="update d-flex row">
+                            <div class="update col-2">
+                                <a href="/funcionario/ver?id=<?= $funcionario->id ?>">
+                                    <i class='bx bx-edit'></i>
+                                </a>
+                            </div>
+                            <div class="delete col-9">
+                                <a href="/funcionario/deletar?id=<?= $funcionario->id ?>">
+                                    <i class='bx bx-trash text-danger'></i>
+                                </a>
+                            </div>                          
+                        </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

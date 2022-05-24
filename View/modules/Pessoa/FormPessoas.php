@@ -25,17 +25,17 @@
                 <legend>Cadastro de Pessoas</legend>
                 <label for="nome">Nome:</label>
                 <input class="form-control mb-3" type="text" name="nome" id="nome"
-                value="<?php (isset($dados_pessoa)) ? print_r($dados_pessoa->nome) : '' ?>"
+                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->nome : '' ?>"
                 >
 
                 <label for="cpf">CPF:</label>
                 <input class="form-control mb-3" type="number" name="cpf" id="cpf"
-                value="<?php (isset($dados_pessoa)) ? print_r($dados_pessoa->cpf) : '' ?>"
+                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->cpf : '' ?>"
                 >
 
                 <label for="data_nascimento">Data Nascimento:</label>
                 <input class="form-control mb-3" type="date" name="data_nascimento" id="data_nascimento"
-                value="<?php (isset($dados_pessoa)) ? print_r($dados_pessoa->data_nascimento) : '' ?>"
+                value="<?= (isset($dados_pessoa)) ? $dados_pessoa->data_nascimento : '' ?>"
                 >
 
                 <br>

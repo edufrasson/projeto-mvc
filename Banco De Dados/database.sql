@@ -37,6 +37,7 @@ create view view_produto as
 SELECT p.id as id,
 	   p.descricao as descricao,
 	   p.preco as preco,
+       cp.id as id_categoria,
        cp.descricao as categoria
 FROM produto p 
 JOIN categoria_produto cp on cp.id = p.id_categoria

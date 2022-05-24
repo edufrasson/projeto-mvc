@@ -36,5 +36,26 @@ class FuncionarioController{
         $funcionario->data_nascimento = $_POST['data_nascimento'];
         
         $funcionario->save();
+
+        header('Location: /funcionario');
     }
+
+    public static function delete(){
+        include 'Model/FuncionarioModel.php';
+        $funcionario = new FuncionarioModel();
+        if(isset($_GET['id']))
+            $funcionario->delete($_GET['id']);
+
+        header('Location: /Funcionario');  
+    }
+
+    public static function ver(){
+        include 'Model/FuncionarioModel.php';
+        $model = new FuncionarioModel();
+        
+        $dados_funcionario = $model->getById($_GET['id']);
+        
+        include 'View/modules/Funcionario/FormFuncionario.php';    
+    }
+
 }

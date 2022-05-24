@@ -23,6 +23,24 @@ class CategoriaProdutoController{
         $model->descricao = $_POST['descricao'];
         $model->save();
 
-        header("Location: /categoria_produto/form");
+        header("Location: /categoria_produto");
+    }
+
+    public static function delete(){
+        include 'Model/CategoriaProdutoModel.php';
+        $categoria_produto = new CategoriaProdutoModel();
+        if(isset($_GET['id']))
+            $categoria_produto->delete($_GET['id']);
+
+        header('Location: /categoria_produto');  
+    }
+
+    public static function ver(){
+        include 'Model/CategoriaProdutoModel.php';
+        $model = new CategoriaProdutoModel();
+        
+        $dados_categoria_produto = $model->getById($_GET['id']);
+        
+        include 'View/modules/Categoria_Produto/FormCategoriaProduto.php';    
     }
 }

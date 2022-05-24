@@ -14,9 +14,9 @@ class ProdutoController{
         include 'View/modules/Produto/ListarProduto.php';
     }
     public static function form(){
-        include 'Model/ProdutoModel.php';
-        $model = new ProdutoModel();
-        $model->lista_categorias = $model->getAllCategorias();
+        include 'Model/CategoriaProdutoModel.php';
+        $model_categoria = new CategoriaProdutoModel();
+        $categorias_arr = $model_categoria->getAll();
 
         include 'View/modules/Produto/FormProduto.php';
     }
@@ -34,7 +34,30 @@ class ProdutoController{
         // Salvando os valores
         $model->save();
 
-        // Volta para a pagina do formulário
-        header("Location: /produto/form");
+        // Volta para a pagina de listagem
+        header("Location: /produto");
+    }
+
+    public static function delete(){
+        include 'Model/ProdutoModel.php';
+        $produto = new ProdutoModel();
+        if(isset($_GET['id']))
+            $produto->delete($_GET['id']);
+
+        header('Location: /Produto');  
+    }
+
+    public static function ver(){
+        
+        include 'Model/ProdutoModel.php';
+        include 'Model/CategoriaProdutoModel.php';
+
+        $model_produto = new ProdutoModel();     
+        $dados_produto = $model_produto->getById($_GET['id']);
+
+        $model_categoria = new CategoriaProdutoModel();
+        $categorias_arr = $model_categoria->getAll();
+        
+        include 'View/modules/Produto/FormProduto.php';    
     }
 }

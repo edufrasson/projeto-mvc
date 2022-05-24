@@ -30,12 +30,12 @@
                         <td><?= $categoria->descricao ?></td>
                         <td class="update d-flex row">
                             <div class="update col-2">
-                                <a href="/ver?id=<?= $categoria->id ?>">
+                                <a href="/categoria_produto/ver?id=<?= $categoria->id ?>">
                                     <i class='bx bx-edit'></i>
                                 </a>
                             </div>
                             <div class="delete col-9">
-                                <a href="/deletar?id=<?= $categoria->id ?>">
+                                <a href="/categoria_produto/deletar?id=<?= $categoria->id ?>">
                                     <i class='bx bx-trash text-danger'></i>
                                 </a>
                             </div>                          

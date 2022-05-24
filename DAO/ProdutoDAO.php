@@ -7,7 +7,7 @@ class ProdutoDAO{
     // Método construtor que cria a conexao com o banco de dados através da classe PDO  
     public function __construct()
     {
-        include 'MySQL.php';
+        include_once 'MySQL.php';
         $this->conexao = new MySQL();
     }
 

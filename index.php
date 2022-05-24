@@ -49,6 +49,14 @@ switch($uri_parse){
         FuncionarioController::save();
     break; 
 
+    case '/funcionario/deletar':
+        FuncionarioController::delete();
+    break; 
+
+    case '/funcionario/ver':
+        FuncionarioController::ver();
+    break; 
+
     // Rotas de Produto
     case '/produto':
         ProdutoController::index();
@@ -62,7 +70,16 @@ switch($uri_parse){
         ProdutoController::save();
     break; 
 
-    // Rotas de categoria
+    case '/produto/deletar':
+        ProdutoController::delete();
+    break; 
+
+    case '/produto/ver':
+        ProdutoController::ver();
+    break; 
+
+
+    // Rotas de categoria de produtos 
 
     case '/categoria_produto':
         CategoriaProdutoController::index();
@@ -76,7 +93,16 @@ switch($uri_parse){
         CategoriaProdutoController::save();
     break;   
 
-    /*default:
+    case '/categoria_produto/deletar':
+        CategoriaProdutoController::delete();
+    break; 
+
+    case '/categoria_produto/ver':
+        CategoriaProdutoController::ver();
+    break; 
+
+/*
+    default:
         header("Location: /home");
     break;*/
 }
